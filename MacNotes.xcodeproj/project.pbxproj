@@ -58,6 +58,7 @@
 		0A2062101E9D6BCA00117EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2062121E9D6BCA00117EF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0A2B22D61E9D94E200C77A9A /* MacNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacNotes.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		0A2061D41E9D6B7F00117EF9 /* MacNotes */ = {
 			isa = PBXGroup;
 			children = (
+				0A2B22D61E9D94E200C77A9A /* MacNotes.entitlements */,
 				0A2061D51E9D6B7F00117EF9 /* AppDelegate.swift */,
 				0A2061D71E9D6B7F00117EF9 /* ViewController.swift */,
 				0A2061D91E9D6B7F00117EF9 /* Assets.xcassets */,
@@ -192,11 +194,21 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = HHHUR439AA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 					0A2062031E9D6BCA00117EF9 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = HHHUR439AA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -394,6 +406,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacNotes/MacNotes.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HHHUR439AA;
 				INFOPLIST_FILE = MacNotes/Info.plist;
@@ -409,6 +422,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacNotes/MacNotes.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HHHUR439AA;
 				INFOPLIST_FILE = MacNotes/Info.plist;
@@ -468,6 +482,7 @@
 				0A2061F91E9D6B7F00117EF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A2062171E9D6BCA00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesWidget" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +491,7 @@
 				0A2062191E9D6BCA00117EF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

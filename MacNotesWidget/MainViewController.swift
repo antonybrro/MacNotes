@@ -11,18 +11,22 @@ import Cocoa
 class MainViewController: NSViewController {
 	
 	@IBOutlet var textView: NSTextView!
-	let key = "com.antonybrro.macnoteswidget.attrString";
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	let key = "com.antonybrro.macnoteswidget.attrString";
+	let suiteName = "group.com.antonybrro.macnotes"
+	
+	override func viewWillAppear() {
+		super.viewWillAppear()
 		
-		if let text = UserDefaults.standard.string(forKey: key) {
+		textView.textStorage?.mutableString.setString("")
+		
+		if let text = UserDefaults(suiteName: suiteName)?.string(forKey: key) {
 			textView.textStorage?.append(NSAttributedString(string: text))
 		}
 	}
 	
 	override func viewWillDisappear() {
 		let text = textView.attributedString().string
-		UserDefaults.standard.set(text, forKey: key)
+		UserDefaults(suiteName: suiteName)?.set(text, forKey: key)
 	}
 }
