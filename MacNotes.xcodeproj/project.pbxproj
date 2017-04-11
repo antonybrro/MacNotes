@@ -11,26 +11,37 @@
 		0A2061D81E9D6B7F00117EF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2061D71E9D6B7F00117EF9 /* ViewController.swift */; };
 		0A2061DA1E9D6B7F00117EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A2061D91E9D6B7F00117EF9 /* Assets.xcassets */; };
 		0A2061DD1E9D6B7F00117EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2061DB1E9D6B7F00117EF9 /* Main.storyboard */; };
-		0A2061E81E9D6B7F00117EF9 /* MacNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2061E71E9D6B7F00117EF9 /* MacNotesTests.swift */; };
-		0A2061F31E9D6B7F00117EF9 /* MacNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2061F21E9D6B7F00117EF9 /* MacNotesUITests.swift */; };
+		0A2062071E9D6BCA00117EF9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2062061E9D6BCA00117EF9 /* NotificationCenter.framework */; };
+		0A20620C1E9D6BCA00117EF9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20620B1E9D6BCA00117EF9 /* TodayViewController.swift */; };
+		0A20620F1E9D6BCA00117EF9 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A20620D1E9D6BCA00117EF9 /* TodayViewController.xib */; };
+		0A2062131E9D6BCA00117EF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A2062111E9D6BCA00117EF9 /* InfoPlist.strings */; };
+		0A2062161E9D6BCA00117EF9 /* MacNotesWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A2062041E9D6BCA00117EF9 /* MacNotesWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A20621C1E9D6D3F00117EF9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0A2061E41E9D6B7F00117EF9 /* PBXContainerItemProxy */ = {
+		0A2062141E9D6BCA00117EF9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0A2061CA1E9D6B7F00117EF9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0A2061D11E9D6B7F00117EF9;
-			remoteInfo = MacNotes;
-		};
-		0A2061EF1E9D6B7F00117EF9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0A2061CA1E9D6B7F00117EF9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0A2061D11E9D6B7F00117EF9;
-			remoteInfo = MacNotes;
+			remoteGlobalIDString = 0A2062031E9D6BCA00117EF9;
+			remoteInfo = MacNotesWidget;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A20621A1E9D6BCA00117EF9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0A2062161E9D6BCA00117EF9 /* MacNotesWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A2061D21E9D6B7F00117EF9 /* MacNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,12 +50,14 @@
 		0A2061D91E9D6B7F00117EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2061DC1E9D6B7F00117EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A2061DE1E9D6B7F00117EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A2061E31E9D6B7F00117EF9 /* MacNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A2061E71E9D6B7F00117EF9 /* MacNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacNotesTests.swift; sourceTree = "<group>"; };
-		0A2061E91E9D6B7F00117EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A2061EE1E9D6B7F00117EF9 /* MacNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A2061F21E9D6B7F00117EF9 /* MacNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacNotesUITests.swift; sourceTree = "<group>"; };
-		0A2061F41E9D6B7F00117EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A2062041E9D6BCA00117EF9 /* MacNotesWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacNotesWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2062061E9D6BCA00117EF9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0A20620A1E9D6BCA00117EF9 /* MacNotesWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacNotesWidget.entitlements; sourceTree = "<group>"; };
+		0A20620B1E9D6BCA00117EF9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0A20620E1E9D6BCA00117EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		0A2062101E9D6BCA00117EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A2062121E9D6BCA00117EF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +68,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A2061E01E9D6B7F00117EF9 /* Frameworks */ = {
+		0A2062011E9D6BCA00117EF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0A2061EB1E9D6B7F00117EF9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				0A2062071E9D6BCA00117EF9 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				0A2061D41E9D6B7F00117EF9 /* MacNotes */,
-				0A2061E61E9D6B7F00117EF9 /* MacNotesTests */,
-				0A2061F11E9D6B7F00117EF9 /* MacNotesUITests */,
+				0A2062081E9D6BCA00117EF9 /* MacNotesWidget */,
+				0A2062051E9D6BCA00117EF9 /* Frameworks */,
 				0A2061D31E9D6B7F00117EF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				0A2061D21E9D6B7F00117EF9 /* MacNotes.app */,
-				0A2061E31E9D6B7F00117EF9 /* MacNotesTests.xctest */,
-				0A2061EE1E9D6B7F00117EF9 /* MacNotesUITests.xctest */,
+				0A2062041E9D6BCA00117EF9 /* MacNotesWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,22 +110,33 @@
 			path = MacNotes;
 			sourceTree = "<group>";
 		};
-		0A2061E61E9D6B7F00117EF9 /* MacNotesTests */ = {
+		0A2062051E9D6BCA00117EF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A2061E71E9D6B7F00117EF9 /* MacNotesTests.swift */,
-				0A2061E91E9D6B7F00117EF9 /* Info.plist */,
+				0A2062061E9D6BCA00117EF9 /* NotificationCenter.framework */,
 			);
-			path = MacNotesTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0A2061F11E9D6B7F00117EF9 /* MacNotesUITests */ = {
+		0A2062081E9D6BCA00117EF9 /* MacNotesWidget */ = {
 			isa = PBXGroup;
 			children = (
-				0A2061F21E9D6B7F00117EF9 /* MacNotesUITests.swift */,
-				0A2061F41E9D6B7F00117EF9 /* Info.plist */,
+				0A20620B1E9D6BCA00117EF9 /* TodayViewController.swift */,
+				0A20620D1E9D6BCA00117EF9 /* TodayViewController.xib */,
+				0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */,
+				0A2062101E9D6BCA00117EF9 /* Info.plist */,
+				0A2062111E9D6BCA00117EF9 /* InfoPlist.strings */,
+				0A2062091E9D6BCA00117EF9 /* Supporting Files */,
 			);
-			path = MacNotesUITests;
+			path = MacNotesWidget;
+			sourceTree = "<group>";
+		};
+		0A2062091E9D6BCA00117EF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A20620A1E9D6BCA00117EF9 /* MacNotesWidget.entitlements */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,51 +149,34 @@
 				0A2061CE1E9D6B7F00117EF9 /* Sources */,
 				0A2061CF1E9D6B7F00117EF9 /* Frameworks */,
 				0A2061D01E9D6B7F00117EF9 /* Resources */,
+				0A20621A1E9D6BCA00117EF9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0A2062151E9D6BCA00117EF9 /* PBXTargetDependency */,
 			);
 			name = MacNotes;
 			productName = MacNotes;
 			productReference = 0A2061D21E9D6B7F00117EF9 /* MacNotes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0A2061E21E9D6B7F00117EF9 /* MacNotesTests */ = {
+		0A2062031E9D6BCA00117EF9 /* MacNotesWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A2061FA1E9D6B7F00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesTests" */;
+			buildConfigurationList = 0A2062171E9D6BCA00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesWidget" */;
 			buildPhases = (
-				0A2061DF1E9D6B7F00117EF9 /* Sources */,
-				0A2061E01E9D6B7F00117EF9 /* Frameworks */,
-				0A2061E11E9D6B7F00117EF9 /* Resources */,
+				0A2062001E9D6BCA00117EF9 /* Sources */,
+				0A2062011E9D6BCA00117EF9 /* Frameworks */,
+				0A2062021E9D6BCA00117EF9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0A2061E51E9D6B7F00117EF9 /* PBXTargetDependency */,
 			);
-			name = MacNotesTests;
-			productName = MacNotesTests;
-			productReference = 0A2061E31E9D6B7F00117EF9 /* MacNotesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0A2061ED1E9D6B7F00117EF9 /* MacNotesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0A2061FD1E9D6B7F00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesUITests" */;
-			buildPhases = (
-				0A2061EA1E9D6B7F00117EF9 /* Sources */,
-				0A2061EB1E9D6B7F00117EF9 /* Frameworks */,
-				0A2061EC1E9D6B7F00117EF9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0A2061F01E9D6B7F00117EF9 /* PBXTargetDependency */,
-			);
-			name = MacNotesUITests;
-			productName = MacNotesUITests;
-			productReference = 0A2061EE1E9D6B7F00117EF9 /* MacNotesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = MacNotesWidget;
+			productName = MacNotesWidget;
+			productReference = 0A2062041E9D6BCA00117EF9 /* MacNotesWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -193,17 +193,10 @@
 						DevelopmentTeam = HHHUR439AA;
 						ProvisioningStyle = Automatic;
 					};
-					0A2061E21E9D6B7F00117EF9 = {
+					0A2062031E9D6BCA00117EF9 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = HHHUR439AA;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 0A2061D11E9D6B7F00117EF9;
-					};
-					0A2061ED1E9D6B7F00117EF9 = {
-						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = HHHUR439AA;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 0A2061D11E9D6B7F00117EF9;
 					};
 				};
 			};
@@ -221,8 +214,7 @@
 			projectRoot = "";
 			targets = (
 				0A2061D11E9D6B7F00117EF9 /* MacNotes */,
-				0A2061E21E9D6B7F00117EF9 /* MacNotesTests */,
-				0A2061ED1E9D6B7F00117EF9 /* MacNotesUITests */,
+				0A2062031E9D6BCA00117EF9 /* MacNotesWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -237,17 +229,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A2061E11E9D6B7F00117EF9 /* Resources */ = {
+		0A2062021E9D6BCA00117EF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0A2061EC1E9D6B7F00117EF9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				0A20620F1E9D6BCA00117EF9 /* TodayViewController.xib in Resources */,
+				0A2062131E9D6BCA00117EF9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,34 +250,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A2061DF1E9D6B7F00117EF9 /* Sources */ = {
+		0A2062001E9D6BCA00117EF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A2061E81E9D6B7F00117EF9 /* MacNotesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0A2061EA1E9D6B7F00117EF9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0A2061F31E9D6B7F00117EF9 /* MacNotesUITests.swift in Sources */,
+				0A20620C1E9D6BCA00117EF9 /* TodayViewController.swift in Sources */,
+				0A20621C1E9D6D3F00117EF9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0A2061E51E9D6B7F00117EF9 /* PBXTargetDependency */ = {
+		0A2062151E9D6BCA00117EF9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A2061D11E9D6B7F00117EF9 /* MacNotes */;
-			targetProxy = 0A2061E41E9D6B7F00117EF9 /* PBXContainerItemProxy */;
-		};
-		0A2061F01E9D6B7F00117EF9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0A2061D11E9D6B7F00117EF9 /* MacNotes */;
-			targetProxy = 0A2061EF1E9D6B7F00117EF9 /* PBXContainerItemProxy */;
+			target = 0A2062031E9D6BCA00117EF9 /* MacNotesWidget */;
+			targetProxy = 0A2062141E9D6BCA00117EF9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -301,6 +276,22 @@
 				0A2061DC1E9D6B7F00117EF9 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0A20620D1E9D6BCA00117EF9 /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A20620E1E9D6BCA00117EF9 /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		0A2062111E9D6BCA00117EF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A2062121E9D6BCA00117EF9 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -401,6 +392,7 @@
 		0A2061F81E9D6B7F00117EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HHHUR439AA;
@@ -415,6 +407,7 @@
 		0A2061F91E9D6B7F00117EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HHHUR439AA;
@@ -426,65 +419,33 @@
 			};
 			name = Release;
 		};
-		0A2061FB1E9D6B7F00117EF9 /* Debug */ = {
+		0A2062181E9D6BCA00117EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_ENTITLEMENTS = MacNotesWidget/MacNotesWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HHHUR439AA;
-				INFOPLIST_FILE = MacNotesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.antonybrro.MacNotesTests;
+				INFOPLIST_FILE = MacNotesWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonybrro.MacNotes.MacNotesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacNotes.app/Contents/MacOS/MacNotes";
 			};
 			name = Debug;
 		};
-		0A2061FC1E9D6B7F00117EF9 /* Release */ = {
+		0A2062191E9D6BCA00117EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_ENTITLEMENTS = MacNotesWidget/MacNotesWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HHHUR439AA;
-				INFOPLIST_FILE = MacNotesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.antonybrro.MacNotesTests;
+				INFOPLIST_FILE = MacNotesWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonybrro.MacNotes.MacNotesWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacNotes.app/Contents/MacOS/MacNotes";
-			};
-			name = Release;
-		};
-		0A2061FE1E9D6B7F00117EF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HHHUR439AA;
-				INFOPLIST_FILE = MacNotesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.antonybrro.MacNotesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MacNotes;
-			};
-			name = Debug;
-		};
-		0A2061FF1E9D6B7F00117EF9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HHHUR439AA;
-				INFOPLIST_FILE = MacNotesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.antonybrro.MacNotesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MacNotes;
 			};
 			name = Release;
 		};
@@ -508,19 +469,11 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		0A2061FA1E9D6B7F00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesTests" */ = {
+		0A2062171E9D6BCA00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A2061FB1E9D6B7F00117EF9 /* Debug */,
-				0A2061FC1E9D6B7F00117EF9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		0A2061FD1E9D6B7F00117EF9 /* Build configuration list for PBXNativeTarget "MacNotesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0A2061FE1E9D6B7F00117EF9 /* Debug */,
-				0A2061FF1E9D6B7F00117EF9 /* Release */,
+				0A2062181E9D6BCA00117EF9 /* Debug */,
+				0A2062191E9D6BCA00117EF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

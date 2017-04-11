@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="MacNotesWidget" customModuleProvider="target">
+            <connections>
+                <outlet property="height" destination="s2r-SO-Sao" id="C0k-OO-Jgy"/>
+                <outlet property="mainViewController" destination="iPA-4D-n0c" id="DRW-0n-NUb"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+        </customView>
+        <customView id="ZVo-xe-7Jk" userLabel="Main">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy4-iq-6XN">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                    <clipView key="contentView" drawsBackground="NO" id="grL-6q-9te">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView drawsBackground="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Arc-dg-KoK">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="340" height="100"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="s2r-SO-Sao"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="KXe-Sx-laZ">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="op5-6B-sNu">
+                        <rect key="frame" x="324" y="0.0" width="16" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Yy4-iq-6XN" secondAttribute="bottom" id="41v-Ju-FJe"/>
+                <constraint firstItem="Yy4-iq-6XN" firstAttribute="leading" secondItem="ZVo-xe-7Jk" secondAttribute="leading" id="97j-zI-q8W"/>
+                <constraint firstAttribute="trailing" secondItem="Yy4-iq-6XN" secondAttribute="trailing" constant="10" id="nlv-E9-iAN"/>
+                <constraint firstItem="Yy4-iq-6XN" firstAttribute="top" secondItem="ZVo-xe-7Jk" secondAttribute="top" id="tbY-Oq-DSp"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="316"/>
+        </customView>
+        <viewController id="iPA-4D-n0c" userLabel="Main View Controller" customClass="MainViewController" customModule="MacNotesWidget" customModuleProvider="target">
+            <connections>
+                <outlet property="textView" destination="Arc-dg-KoK" id="liy-Cq-y2y"/>
+                <outlet property="view" destination="ZVo-xe-7Jk" id="cR6-bt-skW"/>
+            </connections>
+        </viewController>
+        <viewController id="eSj-8q-hV9"/>
+    </objects>
+</document>
