@@ -10,46 +10,125 @@ import Cocoa
 import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
-
-	@IBOutlet var mainViewController: MainViewController!
+	
+	@IBOutlet weak var popUp: NSPopUpButtonCell!
+	@IBOutlet weak var horizontalLine: NSBox!
+	@IBOutlet weak var textField: NSTextField!
+	@IBOutlet var textView: NSTextView!
+	@IBOutlet weak var addBtn: NSButton!
+	@IBOutlet weak var removeBtn: NSButton!
 	@IBOutlet weak var height: NSLayoutConstraint!
+	@IBOutlet weak var textViewHeight: NSLayoutConstraint!
+	
+	var storage = LocalStorage()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		mainViewController.view.translatesAutoresizingMaskIntoConstraints = false
+		textField.delegate = self
+		textView.delegate = self
+		
+		addBtn.isEnabled = false
+		
+		hideSettings(isHidden: true)
 		self.view.translatesAutoresizingMaskIntoConstraints = false
 		
-		switchFromViewController(nil, toViewController: mainViewController)
+		storage.load()
+		
+		for note in storage.notes {
+			popUp.addItem(withTitle: note.title)
+		}
 	}
+	
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		
+		onPopUpClick(popUp)
+		checkEmptyNotes()
+	}
+	
+	@IBAction func onPopUpClick(_ sender: NSPopUpButtonCell) {
+		textView.textStorage?.mutableString.setString("")
+		
+		for note in storage.notes where note.title == sender.title {
+			textView.textStorage?.mutableString.append(note.text)
+		}
+	}
+	
+	@IBAction func onAddBtnClick(_ sender: NSButton) {
+		let title = textField.stringValue
+		storage.add(index: popUp.indexOfSelectedItem, note: Note(title: title, text: ""))
+		popUp.addItem(withTitle: title)
+		
+		popUp.selectItem(at: storage.notes.count - 1)
+		textView.textStorage?.mutableString.setString("")
+		
+		textField.stringValue.removeAll()
+		addBtn.isEnabled = false
+		
+		checkEmptyNotes()
+	}
+	
+	@IBAction func onRemoveBtnClick(_ sender: NSButton) {
+		let index = popUp.indexOfSelectedItem
+		
+		if storage.notes[index].title == popUp.title {
+			storage.delete(index: index)
+			popUp.removeItem(at: index)
+			
+			onPopUpClick(popUp)
+			
+			checkEmptyNotes()
+		}
+	}
+	
+	@IBAction func onUpDownBtnClick(_ sender: NSButton) {
+		if (textViewHeight.constant != 150) {
+			textViewHeight.constant = 150
+			sender.image = NSImage(named: "down")
+		} else {
+			textViewHeight.constant = 500
+			sender.image = NSImage(named: "up")
+		}
+	}
+
+	// MARK: - Editing
 	
 	var widgetAllowsEditing: Bool {
 		return true
 	}
 	
 	func widgetDidBeginEditing() {
-		height.constant = 300
+		hideSettings(isHidden: false)
 	}
 	
 	func widgetDidEndEditing() {
-		height.constant = 100
+		hideSettings(isHidden: true)
 	}
 	
-	func switchFromViewController(_ fromViewController: NSViewController?, toViewController: NSViewController?) {
-		if fromViewController != nil {
-			fromViewController?.removeFromParentViewController()
-			fromViewController?.view.removeFromSuperview()
-		}
+	func hideSettings(isHidden: Bool) {
+		textField.isHidden = isHidden
+		addBtn.isHidden = isHidden
+		removeBtn.isHidden = isHidden
+		horizontalLine.isHidden = isHidden
+		if isHidden { height.constant = 0 } else { height.constant = 40 }
+	}
+	
+	func checkEmptyNotes() {
+		textView.isEditable = !storage.notes.isEmpty
+		removeBtn.isEnabled = !storage.notes.isEmpty
+	}
+}
+
+extension TodayViewController : NSTextFieldDelegate, NSTextViewDelegate {
+	override func controlTextDidChange(_ obj: Notification) {
+		let text = textField.stringValue
+		addBtn.isEnabled = !text.isEmpty
+	}
+	
+	func textDidChange(_ notification: Notification) {
+		let text = textView.attributedString().string
 		
-		if toViewController != nil {
-			self.addChildViewController(toViewController!)
-			let view = toViewController!.view
-			self.view.addSubview(view)
-			let views: [String:AnyObject] = ["view" : view]
-			self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: views))
-			self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: views))
-		}
-		
-		self.view.layoutSubtreeIfNeeded()
+		storage.update(index: popUp.indexOfSelectedItem, note: Note(title: popUp.title, text: text))
 	}
 }

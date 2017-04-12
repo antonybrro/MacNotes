@@ -16,7 +16,9 @@
 		0A20620F1E9D6BCA00117EF9 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A20620D1E9D6BCA00117EF9 /* TodayViewController.xib */; };
 		0A2062131E9D6BCA00117EF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A2062111E9D6BCA00117EF9 /* InfoPlist.strings */; };
 		0A2062161E9D6BCA00117EF9 /* MacNotesWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A2062041E9D6BCA00117EF9 /* MacNotesWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0A20621C1E9D6D3F00117EF9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */; };
+		0A243FD91E9E9EBF001C783F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A243FD81E9E9EBF001C783F /* Note.swift */; };
+		0A243FDB1E9E9F8B001C783F /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A243FDA1E9E9F8B001C783F /* LocalStorage.swift */; };
+		0A243FDF1E9EC8EF001C783F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A243FDE1E9EC8EF001C783F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,9 @@
 		0A20620E1E9D6BCA00117EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
 		0A2062101E9D6BCA00117EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2062121E9D6BCA00117EF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0A243FD81E9E9EBF001C783F /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		0A243FDA1E9E9F8B001C783F /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		0A243FDE1E9EC8EF001C783F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2B22D61E9D94E200C77A9A /* MacNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacNotes.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,12 +127,14 @@
 		0A2062081E9D6BCA00117EF9 /* MacNotesWidget */ = {
 			isa = PBXGroup;
 			children = (
+				0A243FD81E9E9EBF001C783F /* Note.swift */,
+				0A243FDA1E9E9F8B001C783F /* LocalStorage.swift */,
 				0A20620B1E9D6BCA00117EF9 /* TodayViewController.swift */,
 				0A20620D1E9D6BCA00117EF9 /* TodayViewController.xib */,
-				0A20621B1E9D6D3F00117EF9 /* MainViewController.swift */,
 				0A2062101E9D6BCA00117EF9 /* Info.plist */,
 				0A2062111E9D6BCA00117EF9 /* InfoPlist.strings */,
 				0A2062091E9D6BCA00117EF9 /* Supporting Files */,
+				0A243FDE1E9EC8EF001C783F /* Assets.xcassets */,
 			);
 			path = MacNotesWidget;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A20620F1E9D6BCA00117EF9 /* TodayViewController.xib in Resources */,
+				0A243FDF1E9EC8EF001C783F /* Assets.xcassets in Resources */,
 				0A2062131E9D6BCA00117EF9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,8 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A243FDB1E9E9F8B001C783F /* LocalStorage.swift in Sources */,
 				0A20620C1E9D6BCA00117EF9 /* TodayViewController.swift in Sources */,
-				0A20621C1E9D6D3F00117EF9 /* MainViewController.swift in Sources */,
+				0A243FD91E9E9EBF001C783F /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
