@@ -17,6 +17,8 @@ class ViewController: NSViewController {
 	@IBOutlet weak var addBtn: NSButton!
 	@IBOutlet weak var removeBtn: NSButton!
 	
+	var lastIndexCell = 0
+	
 	var storage = LocalStorage()
 	
 	override func viewDidLoad() {
@@ -49,6 +51,8 @@ class ViewController: NSViewController {
 		
 		textField.stringValue.removeAll()
 		addBtn.isEnabled = false
+		
+		tableView.selectRowIndexes(IndexSet(integer: storage.notes.count - 1), byExtendingSelection: false)
 	}
 	
 	@IBAction func onRemoveBtnClick(_ sender: NSButton) {
@@ -56,7 +60,7 @@ class ViewController: NSViewController {
 		
 		if !storage.notes[index].title.isEmpty {
 			storage.delete(index: index)
-
+			
 			tableView.reloadData()
 			textView.textStorage?.mutableString.setString("")
 			textView.isEditable = false
@@ -88,7 +92,7 @@ extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextVie
 		
 		if let cell = tableView.make(withIdentifier: ViewController.noteCell, owner: nil) as? NSTableCellView {
 			cell.textField?.stringValue = title
-			
+			cell.textField?.textColor = NSColor(calibratedHue: 0.1, saturation: 0.1, brightness: 0.1, alpha: 1.0)
 			return cell
 		}
 		
@@ -99,9 +103,12 @@ extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextVie
 		let selectedIndexCell = tableView.selectedRow
 		
 		if selectedIndexCell < 0 {
-			removeBtn.isEnabled = false
+			tableView.selectRowIndexes(IndexSet(integer: lastIndexCell), byExtendingSelection: false)
 			return
 		}
+		
+		lastIndexCell = selectedIndexCell
+		
 		textView.isEditable = true
 		removeBtn.isEnabled = true
 		
@@ -112,7 +119,10 @@ extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextVie
 		for note in storage.notes where note.title == title {
 			textView.textStorage?.mutableString.append(note.text)
 		}
-		
+	}
+	
+	func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+		return MyNSTableRowView()
 	}
 	
 	// MARK: NSTextViewDelegate
@@ -132,3 +142,16 @@ extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextVie
 	}
 }
 
+// MARK: views subclass
+
+class MyNSTableRowView : NSTableRowView {
+	
+	override func draw(_ dirtyRect: NSRect) {
+		super.draw(dirtyRect)
+		
+		if isSelected == true {
+			NSColor(red:0.99, green:0.88, blue:0.55, alpha:1.0).set()
+			NSRectFill(dirtyRect)
+		}
+	}
+}
