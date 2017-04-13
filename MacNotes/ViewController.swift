@@ -13,6 +13,9 @@ class ViewController: NSViewController {
 	
 	@IBOutlet weak var tableView: NSTableView!
 	@IBOutlet var textView: NSTextView!
+	@IBOutlet weak var textField: NSTextField!
+	@IBOutlet weak var addBtn: NSButton!
+	@IBOutlet weak var removeBtn: NSButton!
 	
 	var storage = LocalStorage()
 	
@@ -22,7 +25,10 @@ class ViewController: NSViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		textView.delegate = self
+		textField.delegate = self
 		
+		addBtn.isEnabled = false
+		removeBtn.isEnabled = false
 		textView.isEditable = false
 	}
 	
@@ -32,9 +38,34 @@ class ViewController: NSViewController {
 		storage.load()
 		tableView.reloadData()
 	}
+	
+	@IBAction func onAddBtnClick(_ sender: NSButton) {
+		let title = textField.stringValue
+		storage.add(index: tableView.selectedRow, note: Note(title: title, text: ""))
+		
+		tableView.reloadData()
+		
+		textView.textStorage?.mutableString.setString("")
+		
+		textField.stringValue.removeAll()
+		addBtn.isEnabled = false
+	}
+	
+	@IBAction func onRemoveBtnClick(_ sender: NSButton) {
+		let index = tableView.selectedRow
+		
+		if !storage.notes[index].title.isEmpty {
+			storage.delete(index: index)
+
+			tableView.reloadData()
+			textView.textStorage?.mutableString.setString("")
+			textView.isEditable = false
+			removeBtn.isEnabled = false
+		}
+	}
 }
 
-extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextViewDelegate {
+extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextViewDelegate, NSTextFieldDelegate {
 	
 	static let noteCell = "NoteCellID"
 	
@@ -68,9 +99,11 @@ extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextVie
 		let selectedIndexCell = tableView.selectedRow
 		
 		if selectedIndexCell < 0 {
+			removeBtn.isEnabled = false
 			return
 		}
 		textView.isEditable = true
+		removeBtn.isEnabled = true
 		
 		textView.textStorage?.mutableString.setString("")
 		
@@ -89,6 +122,13 @@ extension ViewController : NSTableViewDataSource, NSTableViewDelegate, NSTextVie
 		let title = storage.notes[tableView.selectedRow].title
 		
 		storage.update(index: tableView.selectedRow, note: Note(title: title, text: text))
+	}
+	
+	// MARK: NSTextFieldDelegate
+	
+	override func controlTextDidChange(_ obj: Notification) {
+		let text = textField.stringValue
+		addBtn.isEnabled = !text.isEmpty
 	}
 }
 
