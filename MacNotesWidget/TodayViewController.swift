@@ -8,6 +8,7 @@
 
 import Cocoa
 import NotificationCenter
+import Storage
 
 class TodayViewController: NSViewController, NCWidgetProviding {
 	
@@ -32,16 +33,15 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		
 		hideSettings(isHidden: true)
 		self.view.translatesAutoresizingMaskIntoConstraints = false
-		
-		storage.load()
-		
-		for note in storage.notes {
-			popUp.addItem(withTitle: note.title)
-		}
 	}
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
+		
+		storage.load()
+		for note in storage.notes {
+			popUp.addItem(withTitle: note.title)
+		}
 		
 		onPopUpClick(popUp)
 		checkEmptyNotes()
@@ -83,8 +83,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	}
 	
 	@IBAction func onUpDownBtnClick(_ sender: NSButton) {
-		if (textViewHeight.constant != 150) {
-			textViewHeight.constant = 150
+		if (textViewHeight.constant != 100) {
+			textViewHeight.constant = 100
 			sender.image = NSImage(named: "down")
 		} else {
 			textViewHeight.constant = 500

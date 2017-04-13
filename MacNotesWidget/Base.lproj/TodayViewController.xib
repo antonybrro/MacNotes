@@ -23,20 +23,20 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="IT3-bE-Lzb" userLabel="Today View">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="239"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="189"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VE8-PC-KXD">
-                    <rect key="frame" x="0.0" y="23" width="373" height="150"/>
+                    <rect key="frame" x="0.0" y="23" width="373" height="100"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="So2-ba-beE">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView drawsBackground="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="XQQ-xR-x9p">
-                                <rect key="frame" x="0.0" y="1" width="373" height="150"/>
+                                <rect key="frame" x="0.0" y="1" width="373" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="373" height="150"/>
+                                <size key="minSize" width="373" height="100"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             </textView>
@@ -44,19 +44,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </clipView>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="B2G-oP-Xpq"/>
+                        <constraint firstAttribute="height" constant="100" id="B2G-oP-Xpq"/>
                     </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="XTX-ub-tdu">
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VCg-P3-Nxr">
-                        <rect key="frame" x="357" y="0.0" width="16" height="150"/>
+                        <rect key="frame" x="357" y="0.0" width="16" height="100"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-M9-0gx">
-                    <rect key="frame" x="-2" y="175" width="378" height="26"/>
+                    <rect key="frame" x="-2" y="125" width="378" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="77B-Pq-yWu"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zng-Le-HIb"/>
@@ -71,7 +71,7 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YX2-6I-qPk">
-                    <rect key="frame" x="0.0" y="217" width="311" height="22"/>
+                    <rect key="frame" x="0.0" y="167" width="311" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Enter title" drawsBackground="YES" id="5Gk-3X-nNS">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -82,10 +82,10 @@
                     </connections>
                 </textField>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="oVe-ai-y7f">
-                    <rect key="frame" x="0.0" y="206" width="373" height="5"/>
+                    <rect key="frame" x="0.0" y="156" width="373" height="5"/>
                 </box>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="VNq-rX-aiY">
-                    <rect key="frame" x="344" y="217" width="29" height="20"/>
+                    <rect key="frame" x="344" y="167" width="29" height="20"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="3XG-rp-z4b">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -95,7 +95,7 @@
                     </connections>
                 </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="xUy-q1-5FJ">
-                    <rect key="frame" x="319" y="217" width="20" height="20"/>
+                    <rect key="frame" x="319" y="167" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="0pf-Gg-hZu"/>
                         <constraint firstAttribute="width" constant="20" id="KgT-GC-8Ye"/>
