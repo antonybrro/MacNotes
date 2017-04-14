@@ -21,6 +21,9 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	@IBOutlet weak var height: NSLayoutConstraint!
 	@IBOutlet weak var textViewHeight: NSLayoutConstraint!
 	
+	let key = "com.antonybrro.macnoteswidget.indexOfSelectedNote";
+	let suiteName = "group.com.antonybrro.macnotes"
+	
 	var storage = LocalStorage()
 	
 	override func viewDidLoad() {
@@ -43,8 +46,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 			popUp.addItem(withTitle: note.title)
 		}
 		
-		onPopUpClick(popUp)
 		checkEmptyNotes()
+		
+		if let index = UserDefaults(suiteName: suiteName)?.integer(forKey: key) {
+			popUp.selectItem(at: index)
+			onPopUpClick(popUp)
+		}
 	}
 	
 	@IBAction func onPopUpClick(_ sender: NSPopUpButtonCell) {
@@ -53,6 +60,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		for note in storage.notes where note.title == sender.title {
 			textView.textStorage?.mutableString.append(note.text)
 		}
+		
+		UserDefaults(suiteName: suiteName)?.set(popUp.indexOfSelectedItem, forKey: key)
 	}
 	
 	@IBAction func onAddBtnClick(_ sender: NSButton) {
