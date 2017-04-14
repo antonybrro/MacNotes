@@ -49,7 +49,11 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		checkEmptyNotes()
 		
 		if let index = UserDefaults(suiteName: suiteName)?.integer(forKey: key) {
-			popUp.selectItem(at: index)
+			if (index < popUp.numberOfItems) {
+				popUp.selectItem(at: index)
+			}
+			onPopUpClick(popUp)
+		} else {
 			onPopUpClick(popUp)
 		}
 	}

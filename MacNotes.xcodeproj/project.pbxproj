@@ -17,9 +17,9 @@
 		0A2062131E9D6BCA00117EF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A2062111E9D6BCA00117EF9 /* InfoPlist.strings */; };
 		0A2062161E9D6BCA00117EF9 /* MacNotesWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0A2062041E9D6BCA00117EF9 /* MacNotesWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A243FDF1E9EC8EF001C783F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A243FDE1E9EC8EF001C783F /* Assets.xcassets */; };
-		0A802E251E9FCE2D003DDA9C /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A802E241E9FCDAE003DDA9C /* Storage.framework */; };
-		0A802E261E9FCE2D003DDA9C /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A802E241E9FCDAE003DDA9C /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0A802E2E1E9FD37F003DDA9C /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A802E241E9FCDAE003DDA9C /* Storage.framework */; };
+		0A4EF79D1EA12C9A008A460C /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4EF79C1EA12C8B008A460C /* Storage.framework */; };
+		0A4EF79E1EA12C9A008A460C /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4EF79C1EA12C8B008A460C /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A4EF7A11EA12C9D008A460C /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4EF79C1EA12C8B008A460C /* Storage.framework */; };
 		0AE233DB1EA016CD0051B811 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE233DA1EA016CD0051B811 /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,16 +31,16 @@
 			remoteGlobalIDString = 0A2062031E9D6BCA00117EF9;
 			remoteInfo = MacNotesWidget;
 		};
-		0A802E231E9FCDAE003DDA9C /* PBXContainerItemProxy */ = {
+		0A4EF79B1EA12C8B008A460C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0A802E1F1E9FCDAE003DDA9C /* Storage.xcodeproj */;
+			containerPortal = 0A4EF7971EA12C8B008A460C /* Storage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0A802E101E9FCD2F003DDA9C;
 			remoteInfo = Storage;
 		};
-		0A802E271E9FCE2D003DDA9C /* PBXContainerItemProxy */ = {
+		0A4EF79F1EA12C9A008A460C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0A802E1F1E9FCDAE003DDA9C /* Storage.xcodeproj */;
+			containerPortal = 0A4EF7971EA12C8B008A460C /* Storage.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 0A802E0F1E9FCD2F003DDA9C;
 			remoteInfo = Storage;
@@ -65,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0A802E261E9FCE2D003DDA9C /* Storage.framework in Embed Frameworks */,
+				0A4EF79E1EA12C9A008A460C /* Storage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +88,7 @@
 		0A2062121E9D6BCA00117EF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A243FDE1E9EC8EF001C783F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A2B22D61E9D94E200C77A9A /* MacNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacNotes.entitlements; sourceTree = "<group>"; };
-		0A802E1F1E9FCDAE003DDA9C /* Storage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Storage.xcodeproj; path = ../Storage/Storage.xcodeproj; sourceTree = "<group>"; };
+		0A4EF7971EA12C8B008A460C /* Storage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Storage.xcodeproj; path = Storage/Storage.xcodeproj; sourceTree = "<group>"; };
 		0AE233DA1EA016CD0051B811 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A802E251E9FCE2D003DDA9C /* Storage.framework in Frameworks */,
+				0A4EF79D1EA12C9A008A460C /* Storage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2062071E9D6BCA00117EF9 /* NotificationCenter.framework in Frameworks */,
-				0A802E2E1E9FD37F003DDA9C /* Storage.framework in Frameworks */,
+				0A4EF7A11EA12C9D008A460C /* Storage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 		0A2061C91E9D6B7F00117EF9 = {
 			isa = PBXGroup;
 			children = (
-				0A802E1F1E9FCDAE003DDA9C /* Storage.xcodeproj */,
+				0A4EF7971EA12C8B008A460C /* Storage.xcodeproj */,
 				0A2061D41E9D6B7F00117EF9 /* MacNotes */,
 				0A2062081E9D6BCA00117EF9 /* MacNotesWidget */,
 				0A2062051E9D6BCA00117EF9 /* Frameworks */,
@@ -176,10 +176,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0A802E201E9FCDAE003DDA9C /* Products */ = {
+		0A4EF7981EA12C8B008A460C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A802E241E9FCDAE003DDA9C /* Storage.framework */,
+				0A4EF79C1EA12C8B008A460C /* Storage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 			);
 			dependencies = (
 				0A2062151E9D6BCA00117EF9 /* PBXTargetDependency */,
-				0A802E281E9FCE2D003DDA9C /* PBXTargetDependency */,
+				0A4EF7A01EA12C9A008A460C /* PBXTargetDependency */,
 			);
 			name = MacNotes;
 			productName = MacNotes;
@@ -270,8 +270,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0A802E201E9FCDAE003DDA9C /* Products */;
-					ProjectRef = 0A802E1F1E9FCDAE003DDA9C /* Storage.xcodeproj */;
+					ProductGroup = 0A4EF7981EA12C8B008A460C /* Products */;
+					ProjectRef = 0A4EF7971EA12C8B008A460C /* Storage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -283,11 +283,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0A802E241E9FCDAE003DDA9C /* Storage.framework */ = {
+		0A4EF79C1EA12C8B008A460C /* Storage.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Storage.framework;
-			remoteRef = 0A802E231E9FCDAE003DDA9C /* PBXContainerItemProxy */;
+			remoteRef = 0A4EF79B1EA12C8B008A460C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -341,10 +341,10 @@
 			target = 0A2062031E9D6BCA00117EF9 /* MacNotesWidget */;
 			targetProxy = 0A2062141E9D6BCA00117EF9 /* PBXContainerItemProxy */;
 		};
-		0A802E281E9FCE2D003DDA9C /* PBXTargetDependency */ = {
+		0A4EF7A01EA12C9A008A460C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Storage;
-			targetProxy = 0A802E271E9FCE2D003DDA9C /* PBXContainerItemProxy */;
+			targetProxy = 0A4EF79F1EA12C9A008A460C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
